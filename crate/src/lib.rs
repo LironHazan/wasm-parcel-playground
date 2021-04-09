@@ -38,17 +38,17 @@ pub struct ShapeDrawer {
     svg: Element
 }
 
-pub struct Circle {
-    cx:  &'static str,
-    cy:  &'static str,
-    r:  &'static str,
+pub struct Circle <'a>{
+    cx:  &'a str,
+    cy:  &'a str,
+    r:  &'a str,
 }
 
-pub enum Shape {
-    Circle( Circle)
+pub enum Shape<'a> {
+    Circle( Circle<'a>)
 }
 
-impl Circle {
+impl Circle <'_>{
     fn new(cx: &'static str,
            cy: &'static str,
            r: &'static str,
